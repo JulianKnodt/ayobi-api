@@ -5,11 +5,10 @@ from flask import make_response
 import db
 app = Flask(__name__)
 
-@app.route('/api/input', methods=['POST'])
+@app.route('/api/v1/input', methods=['POST'])
 def sample():
-  name = request.form['name']
-  return "name"
-
+  add_fitness(request.form, user_id)
+  return 200
 
 @app.route('/login', methods=['POST'])
 def login():
